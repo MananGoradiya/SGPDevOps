@@ -18,7 +18,7 @@ pipeline {
                 script{
                                       
                     sh 'docker images'
-                    sh 'docker build -t manangoradiya/FIRST-APP .'                    
+                    sh 'docker build -t manangoradiya/first-app .'                    
                 }
             }
         }
