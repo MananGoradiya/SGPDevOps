@@ -22,6 +22,18 @@ pipeline {
                 }
             }
         }
+        
+        stage('Push image to DockerHub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+    // some block
+                        sh 'docker login -u manangoradiya -p {dockerhubpwd}'
+}
+                    sh 'docker push manangoradiya/first-app'
+                }
+            }
+        }
     }
 }
 
