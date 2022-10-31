@@ -28,7 +28,7 @@ pipeline {
                 script{
                     withCredentials([string(credentialsId: 'dockerhubpwd1', variable: 'dockerhubpwd')]) {
     // some block
-                        sh 'docker login -u manangoradiya -p {dockerhubpwd}'
+                        sh 'docker login -u manangoradiya -p ${dockerhubpwd}'
 }
                     sh 'docker push manangoradiya/first-app'
                 }
