@@ -8,8 +8,8 @@ pipeline {
         stage('Build Maven') {
             steps {
               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/MananGoradiya/SGP-DevOps']]])
-                bat 'mvn --version'
-                bat 'mvn clean install -X'
+                sh 'mvn --version'
+                sh 'mvn clean install -X'
             }
         }
         
@@ -18,7 +18,7 @@ pipeline {
                 script{
                    
                      
-                    bat 'docker images'
+                    sh 'docker images'
                    
                     
                 }
